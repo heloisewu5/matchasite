@@ -26,26 +26,73 @@ header {
 
 .header2 {
     font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    color: #332E23;
+    margin: 10px 10px;
+    padding: 0px;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 7;
+}
+
+.header3 {
+    font-weight: 400;
     font-style: normal;
     font-size:30px;
     color: #332E23;
     margin: 0px;
     padding: 0px;
-    grid-row-start: 2;
-    grid-row-end: 2 ;
-    grid-column-start: 2;
-    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-column-start: 7;
 }
-
 
 .subheading {
     grid-area: 3/2/4/5;
+}
+
+.subheading2 {
+    grid-area: 5/6/5/10;
+    margin: 150px 30px;
+}
+
+.subheading3 {
+    grid-area: 6/1/6/7;
+    margin: 10px 50px;
+}
+
+.subheading4 {
+    grid-area: 7/6/7/10;
+    margin: 10px 50px;
+}
+
+.subheading5 {
+    grid-area: 8/1/8/6;
+    margin: 10px 50px;
 }
 
 
 .heroimg {
     grid-area: -2/4/5/9;
 }
+
+.heroimg2 {
+    grid-column-start: 1;
+    grid-column-end: span 6;
+    grid-row-start: 1;
+    grid-row-end: span 5;
+    margin: 0px 5px;
+}
+
+.heroimg3 {
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-row-end: 6;
+    width: auto;
+    height: auto;
+}
+
 
 
 /* NOTE: A new class for the sections of content */
@@ -125,6 +172,14 @@ p {
 .verticaltext {
     grid-column-start: 1;
     grid-row-start: -2;
+}
+
+.verticaltext2 {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    grid-column-start: 9;
+    grid-column-end: 9;
+    grid-row-start: 1;
 }
 
 
@@ -280,7 +335,14 @@ a:active { text-decoration: none; }
     grid-row-start: 1;
     grid-row-end: 9;
     margin:20px 20px;
+}
 
+.divtoside2{
+    grid-column-start: 3;
+    grid-column-end: span 5;
+    grid-row-start: 1;
+    grid-row-end: 9;
+    margin:20px 20px;
 }
 
 
@@ -296,7 +358,9 @@ a:active { text-decoration: none; }
     width:50%;
     height:50%;
 }
+
 /* Grid two divs */
+
 .left {
     grid-column-start: 2;
     grid-column-end: 5;
@@ -318,6 +382,28 @@ ul {
     align-items: flex-start;
 }
 
+
+.resize {
+    height: 500px;
+    width: 200px;
+}
+
+.imgresize1 {
+    height:300px;
+    width: 200px;
+}
+
+.imgresize2 {
+    height: 200px;
+    width: auto;
+}
+
+.texttoright {
+    text-align: right;
+}
+
+
+
 .vertical {
             border-right: 1px solid black;
             height: 300px;
@@ -328,7 +414,6 @@ ul {
             grid-column-end: span 1;
         }
 
-.resize {
-    height: auto;
-    width: 100px;
+.imgposition1 {
+    margin: 50px 50px;
 }
