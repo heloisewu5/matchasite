@@ -36,17 +36,6 @@ header {
     grid-column-start: 7;
 }
 
-.header3 {
-    font-weight: 400;
-    font-style: normal;
-    font-size:30px;
-    color: #332E23;
-    margin: 0px;
-    padding: 0px;
-    grid-row-start: 3;
-    grid-column-start: 7;
-}
-
 .subheading {
     grid-area: 3/2/4/5;
 }
@@ -84,16 +73,6 @@ header {
     margin: 0px 5px;
 }
 
-.heroimg3 {
-    grid-row-start: 1;
-    grid-row-end: 6;
-    grid-column-start: 1;
-    grid-row-end: 6;
-    width: auto;
-    height: auto;
-}
-
-
 
 /* NOTE: A new class for the sections of content */
 .contentSection {
@@ -120,13 +99,6 @@ header {
     justify-content: space-around; /* NOTE: Used to reposition this content like in your example */
 }
 
-.img1, .img2, .img3 {
-    grid-column-end: span 2;
-    align-self: center;
-    grid-area: 1/3/5/3;
-    /* NOTE: Used to reposition the image like in your example */
-}
-
 
 h1 {
     /* NOTE: Styling for both the first and later titles */
@@ -150,6 +122,7 @@ h2 {
     grid-column-end: 4;
 }
 
+/*matcha vs green tea headings*/
 h3 {
     font-weight: 200;
     font-style: normal;
@@ -168,6 +141,28 @@ p {
     grid-column-end: 5;
 }
 
+/*LIST*/
+
+ul {
+    grid-column-start: 2;
+    grid-column-end: 9;
+    margin: 50px 5px;
+    align-items: flex-start;
+}
+
+
+/*VERTICAL TEXT*/
+
+.vertical {
+            border-right: 1px solid black;
+            height: 300px;
+            width: 1px;
+            margin: 0px 30px;
+            grid-column-start: 5;
+            grid-row-start: 2;
+            grid-column-end: span 1;
+        }
+
 
 .verticaltext {
     grid-column-start: 1;
@@ -182,30 +177,60 @@ p {
     grid-row-start: 1;
 }
 
-
 #vertical {
 writing-mode: vertical-lr;text-orientation: mixed;
 }
 
-.texttoright {
-    text-align: right;
-}
 
+/*DIVS*/
 .divtoright {
     grid-column-start: 5;
     grid-column-end: span 3;
 }
 
-hr {
-    border-color: #A5A195;
+.divtoside{
+    grid-column-start: 2;
+    grid-column-end: span 8;
+    grid-row-start: 1;
+    grid-row-end: 9;
+    margin:20px 20px;
 }
 
-.img {
-    border: transparent;
-    height: 200px;
+
+/* Grid two divs */
+
+.left {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+
+.right {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 9;
+}
+
+
+/*IMAGES*/
+
+.threeimages {
+    display:flex;
+    margin: 30px;
+    column-gap: 20px;
+    width:50%;
+    height:50%;
+}
+
+.resize {
+    height: 500px;
     width: 200px;
 }
 
+
+/*MENU*/
 
 #mainContainer {
     margin: 4vw;
@@ -290,43 +315,166 @@ a:active { text-decoration: none; }
 }
 
 
-/* NOTE: Helper classes for grid spans */
 
-.spanGrid-1 {
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+.vertical {
+            border-right: 0.5px solid black;
+            height: 150px;
+            width: 1px;
+            magrin: 10px 10px;
+            grid-column-start: 5;
+            grid-row-start: 2;
+            grid-column-end: span 2;
+        }
+
+#menuSection {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2vw;
+    position: fixed;
+    top: 2vw;
+    right: 2vw;
+    z-index: +99;
+    /* We use Z-Index here to make sure the menu text and button show up on top of the revealed menu */
+    transition: color 0.25s;
+    font: 10px;
+}
+
+#menuButton {
+    background-color: #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    grid-column-start: ;
+    border: 2px solid transparent;
+    transition: background-color 0.25s;
+}
+
+#menutext {
+    font-weight: 200;
+    font-size: 10px;
+    font-style: normal;
+    color: #F1F2E9;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+.invertText {
+    color: #8C845A !important;
+    /* We toggle this class with Javascript to change the color when the black menu shows up */
+}
+
+.invertBG {
+    background-color: #8C845A !important;
+    /* We toggle this class with Javascript to change the color when the black menu shows up */
+}
+
+#menuButton:hover {
+    background-color: #8C845A;
+    border: 1px solid #000;
+    cursor: pointer;
+    /* Because this isn't a link, we need to change the cursor to a hand pointer when we hover over it */
+}
+
+
+#menu {
+    /*    font-size: 2em;*/
+    background-color: #000;
+    color: #8C845A;
+    position: fixed;
+    /* We use fixed to position the menu on top of all the content no matter where we have scrolled */
+    top: -100vh;
+    /* This hides the menu offscreen when it isn't being displayed */
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    transition: top 0.5s;
+    /* Animate the menu when it is revealed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+}
+
+.showMenu {
+    top: 0px !important;
+    /* We toggle this class with javascript, animating the menu from offscreen to the top of the page */
+}
+
+header {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #332E23;
+    margin: 0px;
+    padding: 0px;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 3;
+}
+
+.subheading {
+    grid-area: 3/2/4/5;
+    font-size: 6px;
+}
+
+.heroimg {
+    grid-area: -2/4/4/9;
+}
+
+.verticaltext {
+    grid-column-start: 1;
+    grid-row-start: -2;
+    font-size: 7px;
+}
+
+h1 {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    color: #332E23;
+    margin: 0px;
+    padding: 0px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    color: #332E23;
+    margin: 0px;
+    padding: 0px;
     grid-column-start: 2;
-    grid-column-end: span 1;
+    grid-column-end: 4;
 }
 
-.spanGrid-2 {
+p {
+    font-weight: 300;
+    font-style: normal;
+    color: #332E23;
     grid-column-start: 2;
-    grid-column-end: span 2;
-}
-
-.spanGrid-3 {
-    grid-column-start: 2;
-    grid-column-end: span 3;
-}
-
-.spanGrid-4 {
-    grid-column-start: 2;
-    grid-column-end: span 4;
-}
-
-.spanGrid-5 {
-    grid-column-start: 2;
-    grid-column-end: span 5;
-}
-
-.spanGrid-6 {
-    grid-column-end: span 6;
-}
-
-.spanGrid-7 {
-    grid-column-end: span 7;
-}
-
-.spanGrid-8 {
-    grid-column-end: span 8;
+    grid-column-end: ;
+    font-size: 7px;
 }
 
 .divtoside{
@@ -334,86 +482,73 @@ a:active { text-decoration: none; }
     grid-column-end: span 8;
     grid-row-start: 1;
     grid-row-end: 9;
-    margin:20px 20px;
 }
 
-.divtoside2{
+h3 {
+    font-weight: 200;
+    font-style: normal;
+    font-size: 12px;
+    color: #332E23;
+    margin: 0px;
+    padding: 0px;
+}
+
+.heroimg2 {
+    grid-area: -2/4/4/9;
+    height: 60%;
+    width: 60%;
+}
+
+.header2 {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #332E23;
+    margin: 0px;
+    padding: 0px;
+    grid-row-start: 2;
+    grid-row-end: 2;
     grid-column-start: 3;
-    grid-column-end: span 5;
-    grid-row-start: 1;
-    grid-row-end: 9;
-    margin:20px 20px;
 }
 
+.subheading2 {
+    grid-area: 3/2/4/5;
+    font-size: 6px;
+}
 
-.threetitles {
-    margin: 30px;
-    column-gap: 20px;
+.subheading3 {
+    grid-area: 6/1/6/6;
+    margin: 10px 50px;
+}
+
+.subheading4 {
+    grid-area: 7/1/8/6;
+    margin: 10px 50px;
+}
+
+.subheading5 {
+    grid-area: 8/1/8/6;
+    margin: 10px 50px;
+}
+
+.verticaltext2 {
+    grid-column-start: 1;
+    grid-row-start: -2;
+    font-size: 7px;
 }
 
 .threeimages {
-    display:flex;
+    display:grid;
     margin: 30px;
     column-gap: 20px;
-    width:50%;
-    height:50%;
+    height: 70%;
+    width:70%;
 }
-
-/* Grid two divs */
-
-.left {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 9;
-}
-
-.right {
-    grid-column-start: 6;
-    grid-column-end: 9;
-    grid-row-start: 3;
-    grid-row-end: 9;
-}
-
-ul {
-    grid-column-start: 2;
-    grid-column-end: 9;
-    margin: 50px 5px;
-    align-items: flex-start;
-}
-
 
 .resize {
-    height: 500px;
+    height: 250px;
     width: 200px;
 }
 
-.imgresize1 {
-    height:300px;
-    width: 200px;
 }
 
-.imgresize2 {
-    height: 200px;
-    width: auto;
-}
-
-.texttoright {
-    text-align: right;
-}
-
-
-
-.vertical {
-            border-right: 1px solid black;
-            height: 300px;
-            width: 1px;
-            margin: 0px 30px;
-            grid-column-start: 5;
-            grid-row-start: 2;
-            grid-column-end: span 1;
-        }
-
-.imgposition1 {
-    margin: 50px 50px;
-}
