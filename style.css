@@ -188,6 +188,11 @@ writing-mode: vertical-lr;text-orientation: mixed;
     grid-column-end: span 3;
 }
 
+.divtoleft {
+    grid-column-start: 2;
+    grid-column-end: span 3;
+}
+
 .divtoside{
     grid-column-start: 2;
     grid-column-end: span 8;
@@ -225,8 +230,8 @@ writing-mode: vertical-lr;text-orientation: mixed;
 }
 
 .resize {
-    height: 500px;
-    width: 200px;
+    height: 600px;
+    width: 500px;
 }
 
 

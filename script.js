@@ -1,3 +1,5 @@
+AOS.init();
+
 /* First we get references to the elements on the page we want to interact with or manipulate */
 
 var menuButtonElement = document.getElementById("menuButton");
@@ -11,3 +13,4 @@ menuButtonElement.addEventListener('click', function(){
 	menuSection.classList.toggle('invertText');
 	menuButtonElement.classList.toggle('invertBG');
 });
+
